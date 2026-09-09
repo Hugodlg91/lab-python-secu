@@ -1,0 +1,5 @@
+{
+  "name": "Lab Python Secu M1",
+  "image": "mcr.microsoft.com/devcontainers/python:3.10",
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y nmap && pip install python-nmap requests beautifulsoup4 cryptography pefile"
+}
