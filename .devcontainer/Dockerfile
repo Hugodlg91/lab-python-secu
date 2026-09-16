@@ -1,12 +1,12 @@
 FROM mcr.microsoft.com/devcontainers/python:3.10-bullseye
 
-# Installation des outils système (nmap, netcat, etc.)
-RUN apt-get update && apt-get install -y \
-    nmap \
-    netcat \
+RUN rm -f /etc/apt/sources.list.d/yarn.list \
+    && apt-get update \
+    && apt-get install -y --no-install-recommends \
+       nmap \
+       netcat-openbsd \
     && rm -rf /var/lib/apt/lists/*
 
-# Installation des paquets Python nécessaires au cours
 RUN pip install --no-cache-dir \
     python-nmap \
     requests \
